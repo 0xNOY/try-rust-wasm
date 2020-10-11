@@ -23,7 +23,7 @@ module.exports = {
                 use: "ts-loader"
             },
             {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/,
                 use: [
                     "style-loader",
                     {
