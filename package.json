@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack --mode production",
     "build:dev": "npx webpack --mode development",
-    "start": "npx webpack-dev-server --opne",
+    "start": "npx webpack-dev-server --open",
     "start:dev": "npx webpack-dev-server --open -d"
   },
   "author": "naoya0x00",
