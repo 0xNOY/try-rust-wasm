@@ -4,3 +4,4 @@ rust-lib/pkg
 rust-lib/target
 rust-lib/wasm-pack.log
 wasm-pack.log
+pkg
