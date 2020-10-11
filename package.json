@@ -4,13 +4,15 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx webpack --mode development --watch",
     "build": "npx webpack --mode production",
-    "build:dev": "npx webpack --mode development"
+    "build:dev": "npx webpack --mode development",
+    "start": "npx webpack-dev-server --opne",
+    "start:dev": "npx webpack-dev-server --open -d"
   },
   "author": "naoya0x00",
   "license": "MIT",
   "devDependencies": {
+    "@wasm-tool/wasm-pack-plugin": "^1.3.1",
     "css-loader": "^4.3.0",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
@@ -24,6 +26,7 @@
     "typescript": "^4.0.3",
     "url-loader": "^4.1.1",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }

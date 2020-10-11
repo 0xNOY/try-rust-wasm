@@ -1,19 +1,21 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 
 module.exports = {
     mode: "development",
     entry: "./src/index.ts",
     output: {
         filename: "bundle.js",
-        path: path.join(__dirname, "dist")
+        path: path.resolve(__dirname, "dist")
     },
     plugins: [
+        new WasmPackPlugin({
+            crateDirectory: path.resolve(__dirname, "rust-lib")
+        }),
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
+            template: "./src/index.html"
         })
     ],
     module: {
@@ -54,7 +56,7 @@ module.exports = {
     },
     resolve: {
         extensions: [
-            ".ts", ".js"
+            ".ts", ".tsx", ".js", ".jsx", ".wasm"
         ]
     },
     optimization: {
@@ -65,5 +67,8 @@ module.exports = {
                 }
             })
         ]
+    },
+    devServer: {
+        contentBase: path.resolve(__dirname, "dist")
     }
 };
