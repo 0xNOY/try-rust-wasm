@@ -13,8 +13,8 @@ async function onClickStartButton() {
 
     const RustLib = await import("../../rust-lib/pkg/index");
 
-
-    // ts
+    // 速度計測
+    // typescript
     performance.mark("ts-start");
     loopNTimes(N);
     performance.mark("ts-end");
