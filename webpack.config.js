@@ -12,6 +12,7 @@ module.exports = {
     },
     plugins: [
         new WasmPackPlugin({
+            outDir: path.resolve(__dirname, "rust-lib", "pkg"),
             crateDirectory: path.resolve(__dirname, "rust-lib")
         }),
         new HtmlWebpackPlugin({
